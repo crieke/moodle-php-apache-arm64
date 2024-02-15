@@ -2,7 +2,7 @@ FROM php:8.3-apache-bookworm
 
 # So we can use it anywhere for conditional stuff. Keeping BC with old (non-buildkit, builders)
 ARG TARGETPLATFORM
-ENV TARGETPLATFORM=${TARGETPLATFORM:-linux/amd64}
+ENV TARGETPLATFORM=${TARGETPLATFORM:-linux/arm64}
 RUN echo "Building for ${TARGETPLATFORM}"
 
 # Install some packages that are useful within the images.
