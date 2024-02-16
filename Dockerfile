@@ -52,5 +52,8 @@ ADD root/usr /usr
 # Fix the original permissions of /tmp, the PHP default upload tmp dir.
 RUN chmod 777 /tmp && chmod +t /tmp
 
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+
 CMD ["apache2-foreground"]
 ENTRYPOINT ["moodle-docker-php-entrypoint"]
